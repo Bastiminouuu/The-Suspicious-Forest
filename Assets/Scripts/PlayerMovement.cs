@@ -10,8 +10,7 @@ public class Mouvement : MonoBehaviour
     [SerializeField] float mouvement_speed = 5f; // value accessible directly from the unity interface
     [SerializeField] private new Rigidbody2D rigidbody;
     /*[SerializeField] Animator Player_Animator; // get animation player
-    bool Player_Run;
-    bool Player_Dash;
+    bool Player_Roulade;
     bool Player_Jump;
     bool Player_Attack;
     [SerializeField] SpriteRenderer SpriteRenderer; */
@@ -66,11 +65,11 @@ public class Mouvement : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.LeftArrow))
                 {
-                    transform.Translate(Vector3.left * 5f * Time.deltaTime); ; //translate rebond
+                    transform.Translate(Vector3.left * 8f * Time.deltaTime); ; //translate rebond
                 }
                 else
                 {
-                    transform.Translate(Vector3.right * 5f * Time.deltaTime); ; //translate rebond
+                    transform.Translate(Vector3.right * 8f * Time.deltaTime); ; //translate rebond
                 }
                 StartCoroutine(jump());
             }
@@ -78,11 +77,12 @@ public class Mouvement : MonoBehaviour
 
         IEnumerator jump()
         {
-            //Wait for 0.3 seconds
-            Debug.Log("wait 0.3s");
-            yield return new WaitForSeconds(0.3f);
+            //Wait for 0.2 seconds
+            Debug.Log("wait 0.2s");
+            yield return new WaitForSeconds(0.2f);
 
             rigidbody.velocity = Vector2.up * 6f; // jump
+
             IsJumpPress = false;
             Debug.Log("Jump Inactif");
         }
@@ -93,7 +93,7 @@ public class Mouvement : MonoBehaviour
         //------------------------LEFT----------------------
         if (Input.GetKey(KeyCode.LeftArrow)) // move to the left with animation
          {
-            if (IsGrounded == true && Input.GetKey(KeyCode.Keypad1)) // roulade
+            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
             {
                 rigidbody.velocity = Vector2.left * 4f; // roulade
             }
@@ -106,7 +106,7 @@ public class Mouvement : MonoBehaviour
         //------------------------RIGHT-----------------------
         else if (Input.GetKey(KeyCode.RightArrow)) // move to the right with animation
         {
-            if (IsGrounded == true && Input.GetKey(KeyCode.Keypad1)) // roulade
+            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
             {
                 rigidbody.velocity = Vector2.right * 4f; // roulade
             }

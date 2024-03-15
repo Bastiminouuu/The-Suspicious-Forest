@@ -7,6 +7,9 @@ TagManager:
   - ground
   - LerpOn
   - LerpOff
+  - Checkpoint
+  - Die
+  - GM
   layers:
   - Default
   - TransparentFX
