@@ -29,7 +29,7 @@ public class LerpScript : MonoBehaviour
     {
         if (Deplacement) 
         {
-            transform.position = Vector2.Lerp(Depart.position,End.position,t += 0.5f * Time.deltaTime);
+            transform.position = Vector2.Lerp(Depart.position,End.position,t += 0.8f * Time.deltaTime);
         }
     }
 }

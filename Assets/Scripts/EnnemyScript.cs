@@ -5,12 +5,9 @@ using UnityEngine;
 
 public class EnnemyScript : MonoBehaviour
 {
-    [SerializeField]
-    Transform player;
-    [SerializeField]
-    float agroRange;
-    [SerializeField]
-    float moveSpeed;
+    [SerializeField] Transform player;
+    [SerializeField] float agroRange;
+    [SerializeField] float moveSpeed;
 
     Rigidbody2D rb2d;
 
