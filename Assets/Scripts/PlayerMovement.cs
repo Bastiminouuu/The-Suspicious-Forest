@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Mouvement : MonoBehaviour
 
@@ -25,12 +26,8 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-
-        Movement();
-
+        
     }
-
-
 
 
     //------------------------ISGROUNDED----------------------
@@ -51,14 +48,46 @@ public class Mouvement : MonoBehaviour
         }
     }
     //------------------------ISGROUNDED----------------------
- 
 
-    private void Movement()
+
+
+    public void LeftRightMovement(InputAction.CallbackContext context) 
+    {
+        //------------------------LEFT----------------------
+        if (context.performed) // move to the left with animation
+        {
+            Debug.Log("Leftttttt");
+            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
+            {
+                rigidbody.velocity = Vector2.left * 4f; // roulade
+            }
+
+            transform.Translate(Vector3.left * mouvement_speed * Time.deltaTime);
+        }
+        //------------------------LEFT----------------------
+
+
+        //------------------------RIGHT-----------------------
+        else if (context.performed) // move to the right with animation
+        {
+            Debug.Log("Righttttt");
+            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
+            {
+                rigidbody.velocity = Vector2.right * 4f; // roulade
+            }
+
+            transform.Translate(Vector3.right * mouvement_speed * Time.deltaTime);
+        }
+        //------------------------RIGHT-----------------------
+    }
+
+
+
+    public void Jump(InputAction.CallbackContext context) 
     {
 
-         //------------------------JUMP----------------------
-         if (Input.GetKeyDown(KeyCode.UpArrow)) // performs the jump by pressing up arrow
-         {
+        if (context.performed) // performs the jump by pressing up arrow
+        {
             IsJumpPress = true;
             Debug.Log("Jump actif");
             if (IsGrounded == true && IsJumpPress == true)
@@ -86,35 +115,6 @@ public class Mouvement : MonoBehaviour
             IsJumpPress = false;
             Debug.Log("Jump Inactif");
         }
-
-        //------------------------JUMP----------------------
-
-
-        //------------------------LEFT----------------------
-        if (Input.GetKey(KeyCode.LeftArrow)) // move to the left with animation
-         {
-            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
-            {
-                rigidbody.velocity = Vector2.left * 4f; // roulade
-            }
-
-            transform.Translate(Vector3.left * mouvement_speed * Time.deltaTime);
-        }
-        //------------------------LEFT----------------------
-
-
-        //------------------------RIGHT-----------------------
-        else if (Input.GetKey(KeyCode.RightArrow)) // move to the right with animation
-        {
-            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
-            {
-                rigidbody.velocity = Vector2.right * 4f; // roulade
-            }
-
-            transform.Translate(Vector3.right * mouvement_speed * Time.deltaTime);
-        }
-        //------------------------RIGHT-----------------------
-
     }
 
 }
