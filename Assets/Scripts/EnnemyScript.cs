@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnnemyScript : MonoBehaviour
 {
-    [SerializeField] Transform player;
+    [SerializeField] GameObject player;
     [SerializeField] float agroRange;
     [SerializeField] float moveSpeed;
 
@@ -21,7 +21,7 @@ public class EnnemyScript : MonoBehaviour
     void Update()
     {
         //distance to player
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
+        float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         
         if (distToPlayer < agroRange) 
         {
@@ -37,7 +37,7 @@ public class EnnemyScript : MonoBehaviour
 
     void ChasePlayer()
     {
-        if (transform.position.x < player.position.x) 
+        if (transform.position.x < player.transform.position.x) 
         {
             //enemy is to the left side of the player, so move right
             rb2d.velocity = new Vector2(moveSpeed, 0);
