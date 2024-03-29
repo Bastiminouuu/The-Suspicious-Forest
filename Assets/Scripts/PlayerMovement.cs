@@ -25,13 +25,10 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-
+        
         Movement();
 
     }
-
-
-
 
     //------------------------ISGROUNDED----------------------
     void OnCollisionEnter2D(Collision2D collision)
@@ -51,7 +48,7 @@ public class Mouvement : MonoBehaviour
         }
     }
     //------------------------ISGROUNDED----------------------
- 
+
 
     private void Movement()
     {

@@ -33,8 +33,6 @@ public class EnnemyScript : MonoBehaviour
             //stop chasing player
             StopChasePlayer();
         }
-
-        Die();
     }
 
     void ChasePlayer()
@@ -54,12 +52,6 @@ public class EnnemyScript : MonoBehaviour
     void StopChasePlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
-    }
-
-
-    void Die() 
-    {
-        
     }
 
 }

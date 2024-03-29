@@ -10,6 +10,7 @@ TagManager:
   - Checkpoint
   - Die
   - GM
+  - coin
   layers:
   - Default
   - TransparentFX
