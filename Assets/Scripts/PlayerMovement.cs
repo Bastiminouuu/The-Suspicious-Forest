@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Mouvement : MonoBehaviour
 
@@ -25,8 +26,6 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-        
-        Movement();
 
     }
 
@@ -50,12 +49,11 @@ public class Mouvement : MonoBehaviour
     //------------------------ISGROUNDED----------------------
 
 
-    private void Movement()
+    public void Jump(InputAction.CallbackContext context)
     {
-
-         //------------------------JUMP----------------------
-         if (Input.GetKeyDown(KeyCode.UpArrow)) // performs the jump by pressing up arrow
-         {
+        //------------------------JUMP----------------------
+        if (context.performed) // performs the jump by pressing up arrow
+        {
             IsJumpPress = true;
             Debug.Log("Jump actif");
             if (IsGrounded == true && IsJumpPress == true)
@@ -68,11 +66,11 @@ public class Mouvement : MonoBehaviour
                 {
                     transform.Translate(Vector3.right * 8f * Time.deltaTime); ; //translate rebond
                 }
-                StartCoroutine(jump());
+                StartCoroutine(jumpScript());
             }
         }
 
-        IEnumerator jump()
+        IEnumerator jumpScript()
         {
             //Wait for 0.2 seconds
             Debug.Log("wait 0.2s");
@@ -85,11 +83,13 @@ public class Mouvement : MonoBehaviour
         }
 
         //------------------------JUMP----------------------
+    }
 
-
+    public void LeftMoove(InputAction.CallbackContext context)
+    {
         //------------------------LEFT----------------------
-        if (Input.GetKey(KeyCode.LeftArrow)) // move to the left with animation
-         {
+        if (context.performed) // move to the left with animation
+        {
             if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
             {
                 rigidbody.velocity = Vector2.left * 4f; // roulade
@@ -98,10 +98,12 @@ public class Mouvement : MonoBehaviour
             transform.Translate(Vector3.left * mouvement_speed * Time.deltaTime);
         }
         //------------------------LEFT----------------------
+    }
 
-
+    public void RightMoove(InputAction.CallbackContext context)
+    {
         //------------------------RIGHT-----------------------
-        else if (Input.GetKey(KeyCode.RightArrow)) // move to the right with animation
+        if (context.performed) // move to the right with animation
         {
             if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
             {
@@ -111,7 +113,6 @@ public class Mouvement : MonoBehaviour
             transform.Translate(Vector3.right * mouvement_speed * Time.deltaTime);
         }
         //------------------------RIGHT-----------------------
-
     }
 
 }
