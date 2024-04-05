@@ -21,6 +21,12 @@ public class Mouvement : MonoBehaviour
     private bool isFacingRight = true;
     private float rouladeVitesse = 4f;
 
+    //------------------JUMP-----------------
+    [SerializeField] float JumpHight = 6f;
+    [SerializeField] float gravityScale = 10;
+    [SerializeField] float fallingGravityScale = 40;
+    //------------------JUMP-----------------
+
 
     void Start()
     {
@@ -57,6 +63,7 @@ public class Mouvement : MonoBehaviour
         {
             Debug.Log("au sol");
             IsGrounded = true;
+            rigidbody.gravityScale = 1f;
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -79,14 +86,14 @@ public class Mouvement : MonoBehaviour
             Debug.Log("Jump actif");
             if (IsGrounded == true && IsJumpPress == true)
             {
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    transform.Translate(Vector3.left * 8f * Time.deltaTime); ; //translate rebond
-                }
-                else
-                {
-                    transform.Translate(Vector3.right * 8f * Time.deltaTime); ; //translate rebond
-                }
+                //if (Input.GetKey(KeyCode.LeftArrow))
+                //{
+                //    transform.Translate(Vector3.left * 8f * Time.deltaTime); ; //translate rebond
+                //}
+                //else
+                //{
+                //    transform.Translate(Vector3.right * 8f * Time.deltaTime); ; //translate rebond
+                //}
                 StartCoroutine(jumpScript());
             }
         }
@@ -95,9 +102,19 @@ public class Mouvement : MonoBehaviour
         {
             //Wait for 0.2 seconds
             Debug.Log("wait 0.2s");
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0f);
 
-            rigidbody.velocity = Vector2.up * 6f; // jump
+            rigidbody.AddForce(Vector2.up * JumpHight, ForceMode2D.Impulse);
+            //rigidbody.velocity = Vector2.up * 6f; // jump
+
+            if (rigidbody.velocity.y >= 0)
+            {
+                rigidbody.gravityScale = gravityScale;
+            }
+            else if (rigidbody.velocity.y < 0)
+            {
+                rigidbody.gravityScale = fallingGravityScale;
+            }
 
             IsJumpPress = false;
             Debug.Log("Jump Inactif");
