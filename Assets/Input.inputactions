@@ -16,8 +16,17 @@
                 },
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "628ab40d-eb96-43bc-abe4-643ed97e2fab",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Roulade",
+                    "type": "Button",
+                    "id": "b974ab4a-702d-49b1-8518-4b6996d383b6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -49,6 +58,17 @@
                 },
                 {
                     "name": "",
+                    "id": "21ebe5f6-ee64-47f7-b73c-33c6d9f00b25",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0ef441a0-2bdf-4a78-8158-6ada24823b0c",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -59,9 +79,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Horizontal",
-                    "id": "a6d59138-47bc-432c-b597-83d7f74858b1",
-                    "path": "1DAxis",
+                    "name": "2D Vector",
+                    "id": "4d91575c-aa63-4631-b386-99b3b1f726ca",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -70,8 +90,19 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "d9b7a086-1cc7-4fc3-8b58-30fb27bd91e6",
+                    "name": "Left",
+                    "id": "997c35b2-ae42-4f5f-807f-987774e74f10",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "217abe60-0087-49fd-9292-fb768d151245",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -81,8 +112,30 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
-                    "id": "a250ba19-7ca1-4054-9ee3-bc5317d47691",
+                    "name": "Left",
+                    "id": "f07e8525-d114-459b-aab8-f78598eb6b86",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "c9447140-96d7-4eb3-b406-b72f9dc1299c",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "fc7f898d-c229-41f6-97b8-3cca602da781",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -92,19 +145,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Gamepad",
-                    "id": "5f5744bc-b23c-446d-a3d1-ffe4aa6b8d43",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "e8747497-bd8d-499e-999d-60891f5726a5",
+                    "name": "Right",
+                    "id": "26f489f1-b4a0-4aeb-af0a-0be796df0034",
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
@@ -114,15 +156,37 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
-                    "id": "7db06142-63b6-48f1-b1f0-65d6bf8053b3",
-                    "path": "<Gamepad>/leftStick/left",
+                    "name": "",
+                    "id": "9cebf8e8-95bc-47c2-ae97-03a5ab6450f0",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Roulade",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ecb3f42f-c80a-492d-a2c1-d9d4a892b8d1",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roulade",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11ee8099-8cb5-4342-90e1-e127da881ba7",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roulade",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

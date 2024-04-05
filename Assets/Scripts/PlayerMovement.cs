@@ -19,6 +19,7 @@ public class Mouvement : MonoBehaviour
     [SerializeField] bool IsJumpPress;
     private float horizontal;
     private bool isFacingRight = true;
+    private float rouladeVitesse = 4f;
 
 
     void Start()
@@ -108,6 +109,14 @@ public class Mouvement : MonoBehaviour
     public void HorizontalMoove(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
+    }
+
+    public void Roulade(InputAction.CallbackContext context) 
+    {
+        if (context.performed && IsGrounded == true)
+        {
+            rigidbody.velocity = Vector2.right * rouladeVitesse; // roulade
+        }
     }
 
 }
