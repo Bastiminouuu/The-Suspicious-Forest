@@ -17,6 +17,8 @@ public class Mouvement : MonoBehaviour
     [SerializeField] SpriteRenderer SpriteRenderer; */
     [SerializeField] bool IsGrounded;
     [SerializeField] bool IsJumpPress;
+    private float horizontal;
+    private bool isFacingRight = true;
 
 
     void Start()
@@ -26,8 +28,26 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
+        rigidbody.velocity = new Vector2(horizontal * mouvement_speed, rigidbody.velocity.y);
 
+        if (!isFacingRight && horizontal > 0f) 
+        {
+            Flip();
+        }
+        else if (isFacingRight && horizontal < 0f) 
+        {
+            Flip();
+        }
     }
+
+    private void Flip() 
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
+    }
+
 
     //------------------------ISGROUNDED----------------------
     void OnCollisionEnter2D(Collision2D collision)
@@ -85,34 +105,41 @@ public class Mouvement : MonoBehaviour
         //------------------------JUMP----------------------
     }
 
-    public void LeftMoove(InputAction.CallbackContext context)
+    public void HorizontalMoove(InputAction.CallbackContext context)
     {
-        //------------------------LEFT----------------------
-        if (context.performed) // move to the left with animation
-        {
-            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
-            {
-                rigidbody.velocity = Vector2.left * 4f; // roulade
-            }
-
-            transform.Translate(Vector3.left * mouvement_speed * Time.deltaTime);
-        }
-        //------------------------LEFT----------------------
-    }
-
-    public void RightMoove(InputAction.CallbackContext context)
-    {
-        //------------------------RIGHT-----------------------
-        if (context.performed) // move to the right with animation
-        {
-            if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
-            {
-                rigidbody.velocity = Vector2.right * 4f; // roulade
-            }
-
-            transform.Translate(Vector3.right * mouvement_speed * Time.deltaTime);
-        }
-        //------------------------RIGHT-----------------------
+        horizontal = context.ReadValue<Vector2>().x;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+//------------------------LEFT----------------------
+//if (context.performed) // move to the left with animation
+//{
+//    if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
+//    {
+//        rigidbody.velocity = Vector2.left * 4f; // roulade
+//    }
+//}
+//------------------------LEFT----------------------
+
+//------------------------RIGHT-----------------------
+//if (context.performed) // move to the right with animation
+//{
+//    if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
+//    {
+//        rigidbody.velocity = Vector2.right * 4f; // roulade
+//    }
+
+//    horizontal = context.ReadValue<Vector2>().x;
+//    //transform.Translate(Vector3.right * mouvement_speed * Time.deltaTime);
+//}
+//------------------------RIGHT-----------------------

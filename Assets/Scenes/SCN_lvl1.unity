@@ -376,7 +376,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 17422841}
         m_TargetAssemblyTypeName: Mouvement, Assembly-CSharp
-        m_MethodName: LeftMoove
+        m_MethodName: HorizontalMoove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -386,20 +386,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 17422841}
-        m_TargetAssemblyTypeName: Mouvement, Assembly-CSharp
-        m_MethodName: RightMoove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2e9d4440-166c-477d-a55c-3cd28e3714be
-    m_ActionName: Player/Mouvement[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+    m_ActionId: 628ab40d-eb96-43bc-abe4-643ed97e2fab
+    m_ActionName: Player/Movement[/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/left]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
