@@ -11,6 +11,7 @@ TagManager:
   - Die
   - GM
   - coin
+  - Ladder
   layers:
   - Default
   - TransparentFX
