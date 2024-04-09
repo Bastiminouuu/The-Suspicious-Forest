@@ -5,7 +5,7 @@ using UnityEngine;
 public class BumperScript : MonoBehaviour
 {
 
-    [SerializeField] float Bounce = 10f;
+    private float Bounce = 25f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

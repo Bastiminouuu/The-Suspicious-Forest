@@ -12,6 +12,7 @@ TagManager:
   - GM
   - coin
   - Ladder
+  - enemy
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class DieScript : MonoBehaviour
 
     public GameObject player;
     public GameObject RespawnPoint;
+    private int Vie = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,19 @@ public class DieScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vie == 0)
+        {
+            Debug.Log("Mort");
+
+            StartCoroutine(DieCooldown());
+        }
+    }
+
+    IEnumerator DieCooldown()
+    {
+        yield return new WaitForSeconds(3);
+        //SetActive text for die
+        //return to menu
     }
 
 
@@ -30,4 +43,13 @@ public class DieScript : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            Debug.Log("Toucher");
+            player.transform.position = RespawnPoint.transform.position;
+            Vie--;
+        }
+    }
 }
