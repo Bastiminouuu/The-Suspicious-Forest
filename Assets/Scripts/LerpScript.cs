@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LerpScript : MonoBehaviour
 {
-
     [SerializeField] Transform Depart;
     [SerializeField] Transform End;
     [SerializeField] bool Deplacement = false;
@@ -14,16 +13,17 @@ public class LerpScript : MonoBehaviour
     {
         if (Col.gameObject.tag == "LerpOn") 
         {
+            Debug.Log("Deplacement TRUE");
             Deplacement = true;
         }
 
         if (Col.gameObject.tag == "LerpOff")
         {
+            Debug.Log("Deplacement False");
             Deplacement = false;
             transform.position = this.transform.position;
         }
     }
-
 
     void Update()
     {
