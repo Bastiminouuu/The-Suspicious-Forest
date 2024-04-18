@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DieScript : MonoBehaviour
 {
-
+    public Health Healthscript;
     public GameObject player;
     public GameObject RespawnPoint;
     private int Vie = 3;

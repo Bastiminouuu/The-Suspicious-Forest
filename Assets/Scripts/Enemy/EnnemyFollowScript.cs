@@ -11,7 +11,9 @@ public class EnnemyFollowScript : MonoBehaviour
 
     Rigidbody2D rb2d;
 
-    // Start is called before the first frame update
+    public Health healthscript;
+
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -35,6 +37,18 @@ public class EnnemyFollowScript : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            var HealthComponent = collision.GetComponent<Health>();
+            if (HealthComponent != null)
+            {
+                HealthComponent.TakeDamaged(1);
+            }
+        }
+    }
+
     void ChasePlayer()
     {
         if (transform.position.x < player.transform.position.x) 
@@ -53,13 +67,4 @@ public class EnnemyFollowScript : MonoBehaviour
     {
         rb2d.velocity = new Vector2(0, 0);
     }
-
-    //if (collision.tag == "Player") 
-    //{
-    //    var HealthComponent = collision.GetComponent<Health>();
-    //    if (HealthComponent != null) 
-    //    {
-    //        HealthComponent.TakeDamaged(1);
-    //    }
-    //}
 }

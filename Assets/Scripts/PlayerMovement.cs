@@ -61,7 +61,6 @@ public class Mouvement : MonoBehaviour
     {
         if (collision.gameObject.tag == ("ground"))
         {
-            Debug.Log("au sol");
             IsGrounded = true;
             rigidbody.gravityScale = 1f;
         }
@@ -70,7 +69,6 @@ public class Mouvement : MonoBehaviour
     {
         if (collision.gameObject.tag == ("ground"))
         {
-            Debug.Log("en l'air");
             IsGrounded = false;
         }
     }
@@ -83,7 +81,6 @@ public class Mouvement : MonoBehaviour
         if (context.performed) // performs the jump by pressing up arrow
         {
             IsJumpPress = true;
-            Debug.Log("Jump actif");
             if (IsGrounded == true && IsJumpPress == true)
             {
                 //if (Input.GetKey(KeyCode.LeftArrow))
@@ -101,7 +98,6 @@ public class Mouvement : MonoBehaviour
         IEnumerator jumpScript()
         {
             //Wait for 0.2 seconds
-            Debug.Log("wait 0.2s");
             yield return new WaitForSeconds(0f);
 
             rigidbody.AddForce(Vector2.up * JumpHight, ForceMode2D.Impulse);
@@ -117,7 +113,6 @@ public class Mouvement : MonoBehaviour
             }
 
             IsJumpPress = false;
-            Debug.Log("Jump Inactif");
         }
 
         //------------------------JUMP----------------------
