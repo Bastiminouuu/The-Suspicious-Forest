@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = maxHealth; //set heal to maxheal (3)
     }
 
     void Update()
@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
         
     }
 
-    public void TakeDamaged(int amount)
+    public void TakeDamaged(int amount) //censé prendre des dégats mais marche pas because chepa
     {
         currentHealth -= amount;
         Debug.Log(currentHealth);
@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    IEnumerator Die()
+    IEnumerator Die() //chrono mort 3 secondes avant changement to menu
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("SCN_menu");
