@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ public class EnnemyFollowScript : MonoBehaviour
     Rigidbody2D rb2d;
 
     public Health healthscript;
-
+    public DieScript dieScript;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class EnnemyFollowScript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collider2D collision)
+    void OnColliderEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -45,6 +46,7 @@ public class EnnemyFollowScript : MonoBehaviour
             if (HealthComponent != null)
             {
                 HealthComponent.TakeDamaged(1);
+                dieScript.EnVie = true;
             }
         }
     }
