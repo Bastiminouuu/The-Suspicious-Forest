@@ -10,8 +10,6 @@ public class Health : MonoBehaviour
     public int currentHealth;
     public TMP_Text PV;
 
-
-
     void Start()
     {
         currentHealth = maxHealth; //set heal to maxheal (3)
@@ -26,7 +24,6 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
             StartCoroutine(Die());
         }
     }
