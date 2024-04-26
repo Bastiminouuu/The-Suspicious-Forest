@@ -14,6 +14,7 @@ public class EnnemyFollowScript : MonoBehaviour
 
     public Health healthscript;
     public DieScript dieScript;
+    public GameObject RespawnPoint;
 
     void Start()
     {
@@ -38,16 +39,13 @@ public class EnnemyFollowScript : MonoBehaviour
         }
     }
 
-    void OnColliderEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player") //mort enemy
         {
-            var HealthComponent = collision.GetComponent<Health>();
-            if (HealthComponent != null)
-            {
-                HealthComponent.TakeDamaged(1);
-                dieScript.EnVie = true;
-            }
+            Debug.Log("Mort Enemy");
+            healthscript.TakeDamaged(1);
+            player.transform.position = RespawnPoint.transform.position;
         }
     }
 

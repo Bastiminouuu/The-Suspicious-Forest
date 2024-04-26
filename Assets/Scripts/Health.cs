@@ -9,28 +9,46 @@ public class Health : MonoBehaviour
     public int maxHealth = 3;
     public int currentHealth;
     public TMP_Text PV;
+    [SerializeField] GameObject MortAffichage;
 
     void Start()
     {
+        gameObject.SetActive(false);
         currentHealth = maxHealth; //set heal to maxheal (3)
         PV.text = "Vie : " + currentHealth.ToString();
     }
 
-    public void TakeDamaged(int amount) //censé prendre des dégats mais marche pas because chepa
+    private void Update()
     {
-        currentHealth -= amount;
-        Debug.Log(currentHealth);
-        PV.text = "Vie : " + currentHealth.ToString();
-
         if (currentHealth <= 0)
         {
-            StartCoroutine(Die());
+            gameObject.SetActive(true);
         }
     }
 
-    IEnumerator Die() //chrono mort 3 secondes avant changement to menu
+    public void TakeDamaged(int amount)
     {
-        yield return new WaitForSeconds(3);
+        currentHealth -= amount;
+        Debug.Log("HPs : " + currentHealth);
+        PV.text = "Vie : " + currentHealth.ToString();
+    }
+
+    public void Respawn()
+    {
+        Debug.Log("Respawn");
+        SceneManager.LoadScene("SCN_Start");
+    }
+
+    public void LoadMenu()
+    {
+        Debug.Log("Load Menu");
+        Time.timeScale = 1f;
         SceneManager.LoadScene("SCN_menu");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }

@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //rajouter la touche start manette startButton
         {
             if (GameIsPaused)
             {
@@ -60,5 +60,11 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void Respawn()
+    {
+        Debug.Log("Respawn");
+        SceneManager.LoadScene("SCN_Start");
     }
 }

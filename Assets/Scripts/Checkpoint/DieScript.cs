@@ -6,32 +6,19 @@ using UnityEngine;
 
 public class DieScript : MonoBehaviour
 {
-    public Health Healthscript;
+    public Health healthscript;
     public GameObject player;
     public GameObject RespawnPoint;
     public bool EnVie = true;
 
-    private void OnTriggerEnter2D(Collider2D other) // mort chute
-    {
-        if (other.gameObject.CompareTag("Player")) 
-        {
-            Debug.Log("Die");
-            player.transform.position = RespawnPoint.transform.position;
-        }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision) //mort enemy
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.tag == "Player") //mort chute
         {
-            EnVie = false;
-            if (!EnVie)
-            {
-                Debug.Log("Toucher");
-                player.transform.position = RespawnPoint.transform.position;
-                Debug.Log("Mort et respawn");
-                EnVie = true;
-            }
+            Debug.Log("Die chute");
+            healthscript.TakeDamaged(1);
+            player.transform.position = RespawnPoint.transform.position;
         }
     }
 }
