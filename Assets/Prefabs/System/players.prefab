@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: 0.3, z: 0.03463745}
-  m_LocalScale: {x: 1.2941003, y: 1.451953, z: 1}
+  m_LocalScale: {x: 1.0121717, y: 1.1356351, z: 0.7821432}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -136,8 +136,8 @@ MonoBehaviour:
   rigidbody: {fileID: 3554084436539990246}
   IsGrounded: 0
   IsJumpPress: 0
-  JumpHight: 25
-  gravityScale: 20
+  JumpHight: 14
+  gravityScale: 10
   fallingGravityScale: 5
 --- !u!114 &8223567811402237743
 MonoBehaviour:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61024290db4503a4a86670f54fd52665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Healthscript: {fileID: 3350643045946683241}
+  healthscript: {fileID: 0}
   player: {fileID: 119883808006126429}
   RespawnPoint: {fileID: 0}
   EnVie: 1
@@ -335,3 +335,4 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 0
   PV: {fileID: 0}
+  MortAffichage: {fileID: 0}
