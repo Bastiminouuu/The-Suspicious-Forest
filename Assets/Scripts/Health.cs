@@ -22,7 +22,9 @@ public class Health : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            gameObject.SetActive(true);
+            Debug.Log("Mort");
+            //gameObject.SetActive(true);
+            SceneManager.LoadScene("SCN_menu");
         }
     }
 
