@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3554828271113738943
+--- !u!1 &5142797558886521638
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6539338259571097349}
-  - component: {fileID: 1179584240165772491}
-  - component: {fileID: 4039527764292692490}
-  - component: {fileID: 1083578163342245175}
+  - component: {fileID: 1474293426036413402}
+  - component: {fileID: 7021029507534435907}
+  - component: {fileID: 7177751333410944932}
+  - component: {fileID: 7949348583002108876}
   m_Layer: 0
   m_Name: tyrolienne
   m_TagString: ground
@@ -19,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6539338259571097349
+--- !u!4 &1474293426036413402
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3554828271113738943}
+  m_GameObject: {fileID: 5142797558886521638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.787766, y: -3.7397842, z: 1.0755886}
+  m_LocalPosition: {x: 37.32, y: 7.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1179584240165772491
+--- !u!212 &7021029507534435907
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3554828271113738943}
+  m_GameObject: {fileID: 5142797558886521638}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,24 +75,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0473458e6acfba84d887c790203103cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58725e6b094ae5d4a874aeb1b0ae7926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 21.15, y: 10.802197}
+  m_Size: {x: 18.826117, y: 10.700001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4039527764292692490
+--- !u!61 &7177751333410944932
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3554828271113738943}
+  m_GameObject: {fileID: 5142797558886521638}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -118,26 +118,26 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.902212, y: 1.4719001}
+  m_Offset: {x: -6.5903435, y: 1.4601369}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 21.15, y: 10.802197}
-    newSize: {x: 21.15, y: 10.802197}
+    oldSize: {x: 18.8, y: 10.7}
+    newSize: {x: 18.826117, y: 10.700001}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.2023506, y: 1.7993124}
+  m_Size: {x: 5.171852, y: 1.4130049}
   m_EdgeRadius: 0
---- !u!61 &1083578163342245175
-BoxCollider2D:
+--- !u!68 &7949348583002108876
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3554828271113738943}
+  m_GameObject: {fileID: 5142797558886521638}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -163,16 +163,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.659277, y: -3.858379}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 21.15, y: 10.802197}
-    newSize: {x: 21.15, y: 10.802197}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.230938, y: 1.7707319}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 3.942728, y: -2.9446583}
+  - {x: 9.100477, y: -2.950862}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

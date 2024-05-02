@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     public int maxHealth = 3;
     public int currentHealth;
-    public TMP_Text PV;
+    [SerializeField] Sprite heart3;
+    [SerializeField] Sprite heart2;
+    [SerializeField] Sprite heart1;
+    [SerializeField] Image heart;
     [SerializeField] GameObject MortAffichage;
 
     void Start()
     {
         gameObject.SetActive(false);
         currentHealth = maxHealth; //set heal to maxheal (3)
-        PV.text = "Vie : " + currentHealth.ToString();
     }
 
     private void Update()
@@ -26,13 +29,24 @@ public class Health : MonoBehaviour
             //gameObject.SetActive(true);
             SceneManager.LoadScene("SCN_menu");
         }
+
+        if (currentHealth == 3)
+        {
+            heart.sprite = heart3;
+        }
+        if (currentHealth == 2)
+        {
+            heart.sprite = heart2;
+        }
+        if (currentHealth == 1)
+        {
+            heart.sprite = heart1;
+        }
     }
 
     public void TakeDamaged(int amount)
     {
         currentHealth -= amount;
-        Debug.Log("HPs : " + currentHealth);
-        PV.text = "Vie : " + currentHealth.ToString();
     }
 
     public void Respawn()

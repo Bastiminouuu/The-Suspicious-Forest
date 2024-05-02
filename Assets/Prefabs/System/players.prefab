@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61024290db4503a4a86670f54fd52665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthscript: {fileID: 0}
+  healthscript: {fileID: 3350643045946683241}
   player: {fileID: 119883808006126429}
   RespawnPoint: {fileID: 0}
   EnVie: 1
@@ -334,5 +334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 0
-  PV: {fileID: 0}
+  heart3: {fileID: 21300000, guid: 8158f06c0f9f8b14dbbd2f94552a49d0, type: 3}
+  heart2: {fileID: 21300000, guid: bf9b6e01aa3f27b48bf34675d7ace1e1, type: 3}
+  heart1: {fileID: 21300000, guid: 46cf1d25abf304240afd2e743c4fc76e, type: 3}
+  heart: {fileID: 0}
   MortAffichage: {fileID: 0}
