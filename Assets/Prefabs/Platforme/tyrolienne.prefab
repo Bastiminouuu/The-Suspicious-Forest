@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7021029507534435907}
   - component: {fileID: 7177751333410944932}
   - component: {fileID: 7949348583002108876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tyrolienne
   m_TagString: ground
   m_Icon: {fileID: 0}

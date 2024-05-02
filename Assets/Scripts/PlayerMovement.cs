@@ -17,6 +17,11 @@ public class Mouvement : MonoBehaviour
     [SerializeField] SpriteRenderer SpriteRenderer; */
     [SerializeField] bool IsGrounded;
     [SerializeField] bool IsJumpPress;
+
+    public var top_left : Transform;
+    public var bottom_right : Transform;
+    public var Ground : LayerMask;
+
     private float horizontal;
     private bool isFacingRight = true;
     private float rouladeVitesse = 4f;
@@ -45,6 +50,12 @@ public class Mouvement : MonoBehaviour
         {
             Flip();
         }
+    }
+
+
+    private void FixedUpdate()
+    {
+        IsGrounded = Physics2D.OverlapArea(top_left.position, bottom_right.position, Ground);
     }
 
     private void Flip() 

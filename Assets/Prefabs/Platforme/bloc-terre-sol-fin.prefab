@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6948002707345811663}
   - component: {fileID: 1007408893400487404}
   - component: {fileID: 1209099328952323432}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bloc-terre-sol-fin
   m_TagString: ground
   m_Icon: {fileID: 0}

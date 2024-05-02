@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3018503330956216801}
   - component: {fileID: 6875497090880373231}
   - component: {fileID: 3097156079909371444}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bloc-terre
   m_TagString: ground
   m_Icon: {fileID: 0}
