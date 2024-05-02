@@ -15,12 +15,10 @@ public class Mouvement : MonoBehaviour
     bool Player_Jump;
     bool Player_Attack;
     [SerializeField] SpriteRenderer SpriteRenderer; */
-    [SerializeField] bool IsGrounded;
-    [SerializeField] bool IsJumpPress;
 
-    public var top_left : Transform;
-    public var bottom_right : Transform;
-    public var Ground : LayerMask;
+    public Transform GroundCheck1;
+    public LayerMask Ground;
+    [SerializeField] bool IsGrounded;
 
     private float horizontal;
     private bool isFacingRight = true;
@@ -52,10 +50,9 @@ public class Mouvement : MonoBehaviour
         }
     }
 
-
-    private void FixedUpdate()
+    private bool isgrounded()
     {
-        IsGrounded = Physics2D.OverlapArea(top_left.position, bottom_right.position, Ground);
+        return Physics2D.OverlapCircle(GroundCheck1.position, 0.2f, Ground);
     }
 
     private void Flip() 
@@ -68,42 +65,30 @@ public class Mouvement : MonoBehaviour
 
 
     //------------------------ISGROUNDED----------------------
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == ("ground"))
-        {
-            IsGrounded = true;
-            rigidbody.gravityScale = 1f;
-        }
-    }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == ("ground"))
-        {
-            IsGrounded = false;
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == ("ground"))
+    //    {
+    //        IsGrounded = true;
+    //        rigidbody.gravityScale = 1f;
+    //    }
+    //}
+    //void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == ("ground"))
+    //    {
+    //        IsGrounded = false;
+    //    }
+    //}
     //------------------------ISGROUNDED----------------------
 
 
     public void Jump(InputAction.CallbackContext context)
     {
         //------------------------JUMP----------------------
-        if (context.performed) // performs the jump by pressing up arrow
+        if (context.performed && isgrounded()) // performs the jump by pressing up arrow
         {
-            IsJumpPress = true;
-            if (IsGrounded == true && IsJumpPress == true)
-            {
-                //if (Input.GetKey(KeyCode.LeftArrow))
-                //{
-                //    transform.Translate(Vector3.left * 8f * Time.deltaTime); ; //translate rebond
-                //}
-                //else
-                //{
-                //    transform.Translate(Vector3.right * 8f * Time.deltaTime); ; //translate rebond
-                //}
                 StartCoroutine(jumpScript());
-            }
         }
 
         IEnumerator jumpScript()
@@ -122,8 +107,6 @@ public class Mouvement : MonoBehaviour
             {
                 rigidbody.gravityScale = fallingGravityScale;
             }
-
-            IsJumpPress = false;
         }
 
         //------------------------JUMP----------------------
