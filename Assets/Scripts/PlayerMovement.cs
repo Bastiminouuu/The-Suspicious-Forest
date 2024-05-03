@@ -8,21 +8,22 @@ public class Mouvement : MonoBehaviour
 
 //definition of speed adjustment fields + creation of player booleans
 {
-    [SerializeField] float mouvement_speed = 5f; // value accessible directly from the unity interface
+    [SerializeField] float mouvement_speed = 5f;
     [SerializeField] private new Rigidbody2D rigidbody;
-    /*[SerializeField] Animator Player_Animator; // get animation player
-    bool Player_Roulade;
-    bool Player_Jump;
-    bool Player_Attack;
-    [SerializeField] SpriteRenderer SpriteRenderer; */
+    //[SerializeField] Animator Player_Animator; // get animation player
+    //[SerializeField] SpriteRenderer SpriteRenderer;
+    //bool Player_walk;
 
-    public Transform GroundCheck1;
-    public LayerMask Ground;
+
+    //------------------ISGROUNDED------------
+    [SerializeField] Transform GroundCheck1;
+    [SerializeField] LayerMask Ground;
     [SerializeField] bool IsGrounded;
+    //------------------ISGROUNDED------------
 
     private float horizontal;
     private bool isFacingRight = true;
-    private float rouladeVitesse = 4f;
+    private float rouladeVitesse = 80f;
 
     //------------------JUMP-----------------
     [SerializeField] float JumpHight = 6f;
@@ -50,10 +51,13 @@ public class Mouvement : MonoBehaviour
         }
     }
 
+    //------------------ISGROUNDED------------
     private bool isgrounded()
     {
         return Physics2D.OverlapCircle(GroundCheck1.position, 0.2f, Ground);
     }
+    //------------------ISGROUNDED------------
+
 
     private void Flip() 
     {
@@ -63,54 +67,31 @@ public class Mouvement : MonoBehaviour
         transform.localScale = localScale;
     }
 
-
-    //------------------------ISGROUNDED----------------------
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == ("ground"))
-    //    {
-    //        IsGrounded = true;
-    //        rigidbody.gravityScale = 1f;
-    //    }
-    //}
-    //void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == ("ground"))
-    //    {
-    //        IsGrounded = false;
-    //    }
-    //}
-    //------------------------ISGROUNDED----------------------
-
-
     public void Jump(InputAction.CallbackContext context)
     {
         //------------------------JUMP----------------------
-        if (context.performed && isgrounded()) // performs the jump by pressing up arrow
+        if (context.performed && isgrounded()) // performs the jump and check isgrounded
         {
-                StartCoroutine(jumpScript());
+            StartCoroutine(jumpScript());
         }
-
-        IEnumerator jumpScript()
-        {
-            //Wait for 0.2 seconds
-            yield return new WaitForSeconds(0f);
-
-            rigidbody.AddForce(Vector2.up * JumpHight, ForceMode2D.Impulse);
-            //rigidbody.velocity = Vector2.up * 6f; // jump
-
-            if (rigidbody.velocity.y >= 0)
-            {
-                rigidbody.gravityScale = gravityScale;
-            }
-            else if (rigidbody.velocity.y < 0)
-            {
-                rigidbody.gravityScale = fallingGravityScale;
-            }
-        }
-
-        //------------------------JUMP----------------------
     }
+    IEnumerator jumpScript()
+    {
+        //Wait for 0.2 seconds
+        yield return new WaitForSeconds(0f);
+
+        rigidbody.AddForce(Vector2.up * JumpHight, ForceMode2D.Impulse);
+
+        if (rigidbody.velocity.y >= 0)
+        {
+            rigidbody.gravityScale = gravityScale;
+        }
+        else if (rigidbody.velocity.y < 0)
+        {
+            rigidbody.gravityScale = fallingGravityScale;
+        }
+    }
+    //------------------------JUMP----------------------
 
     public void HorizontalMoove(InputAction.CallbackContext context)
     {
@@ -119,42 +100,12 @@ public class Mouvement : MonoBehaviour
 
     public void Roulade(InputAction.CallbackContext context) 
     {
-        if (context.performed && IsGrounded == true)
+        if (context.performed && isgrounded())
         {
-            rigidbody.velocity = Vector2.right * rouladeVitesse; // roulade
+            Debug.Log("roulade");
+            //rigidbody.velocity = Vector2.right * 100f;
+            //transform.Translate(Vector2.right * 20f * Time.deltaTime);
+            rigidbody.AddForce(Vector2.right * /*1500f*/ mouvement_speed);
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-//------------------------LEFT----------------------
-//if (context.performed) // move to the left with animation
-//{
-//    if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
-//    {
-//        rigidbody.velocity = Vector2.left * 4f; // roulade
-//    }
-//}
-//------------------------LEFT----------------------
-
-//------------------------RIGHT-----------------------
-//if (context.performed) // move to the right with animation
-//{
-//    if (IsGrounded == true && Input.GetKeyDown(KeyCode.Keypad1)) // roulade
-//    {
-//        rigidbody.velocity = Vector2.right * 4f; // roulade
-//    }
-
-//    horizontal = context.ReadValue<Vector2>().x;
-//    //transform.Translate(Vector3.right * mouvement_speed * Time.deltaTime);
-//}
-//------------------------RIGHT-----------------------
