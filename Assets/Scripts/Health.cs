@@ -26,8 +26,9 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Mort");
-            //gameObject.SetActive(true);
-            SceneManager.LoadScene("SCN_menu");
+            //Time.timeScale = 0f;
+            MortAffichage.SetActive(true);
+            //SceneManager.LoadScene("SCN_menu");
         }
 
         if (currentHealth == 3)
@@ -52,6 +53,7 @@ public class Health : MonoBehaviour
     public void Respawn()
     {
         Debug.Log("Respawn");
+        Time.timeScale = 1f;
         SceneManager.LoadScene("SCN_Start");
     }
 
@@ -65,6 +67,7 @@ public class Health : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit");
+        Time.timeScale = 1f;
         Application.Quit();
     }
 }
