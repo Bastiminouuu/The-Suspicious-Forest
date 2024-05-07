@@ -23,7 +23,7 @@ public class Mouvement : MonoBehaviour
 
     private float horizontal;
     private bool isFacingRight = true;
-    private float rouladeVitesse = 80f;
+    //private float rouladeVitesse = 80f;
 
     //------------------JUMP-----------------
     [SerializeField] float JumpHight = 6f;
