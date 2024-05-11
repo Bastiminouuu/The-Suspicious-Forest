@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6948002707345811663}
   - component: {fileID: 1007408893400487404}
-  - component: {fileID: 1209099328952323432}
   m_Layer: 3
   m_Name: bloc-terre-sol-fin
   m_TagString: ground
@@ -85,48 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1209099328952323432
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364712522520478979}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.17666674, y: 1.3103898}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0.39999998, z: 0, w: 0}
-    pivot: {x: 0.19905122, y: 0.3384632}
-    oldSize: {x: 1.33, y: 5.73}
-    newSize: {x: 1.33, y: 5.73}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.88280964, y: 4.0529447}
-  m_EdgeRadius: 0
