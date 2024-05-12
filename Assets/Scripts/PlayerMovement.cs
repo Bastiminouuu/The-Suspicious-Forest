@@ -23,7 +23,7 @@ public class Mouvement : MonoBehaviour
 
     private float horizontal;
     private bool isFacingRight = true;
-    //private float rouladeVitesse = 80f;
+    private float rouladeVitesse = 700f;
 
     //------------------JUMP-----------------
     [SerializeField] float JumpHight = 6f;
@@ -40,6 +40,8 @@ public class Mouvement : MonoBehaviour
     void Update()
     {
         rigidbody.velocity = new Vector2(horizontal * mouvement_speed, rigidbody.velocity.y);
+
+        Roulade();
 
         if (!isFacingRight && horizontal > 0f) 
         {
@@ -98,14 +100,14 @@ public class Mouvement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
     }
 
-    public void Roulade(InputAction.CallbackContext context) 
+    public void Roulade() 
     {
-        if (context.performed && isgrounded())
+        if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
         {
             Debug.Log("roulade");
             //rigidbody.velocity = Vector2.right * 100f;
             //transform.Translate(Vector2.right * 20f * Time.deltaTime);
-            rigidbody.AddForce(Vector2.right * /*1500f*/ mouvement_speed);
+            rigidbody.AddForce(Vector2.right * rouladeVitesse);
         }
     }
 }

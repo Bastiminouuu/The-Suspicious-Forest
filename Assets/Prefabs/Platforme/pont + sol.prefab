@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5557305221710153433}
   - component: {fileID: 1047484332321302640}
   - component: {fileID: 9151271102684879453}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pont + sol
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
