@@ -140,9 +140,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   IsGrounded: 0
-  JumpHight: 14
+  JumpHight: 13
   gravityScale: 10
-  fallingGravityScale: 5
+  fallingGravityScale: 4
 --- !u!114 &8223567811402237743
 MonoBehaviour:
   m_ObjectHideFlags: 0
