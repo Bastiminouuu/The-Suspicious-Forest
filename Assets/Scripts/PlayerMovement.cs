@@ -105,8 +105,8 @@ public class Mouvement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
         {
             Debug.Log("roulade");
-            //rigidbody.velocity = Vector2.right * 100f;
-            //transform.Translate(Vector2.right * 20f * Time.deltaTime);
+            //rigidbody.velocity = Vector2.right * rouladeVitesse;
+            //transform.Translate(Vector2.right * rouladeVitesse * Time.deltaTime);
             rigidbody.AddForce(Vector2.right * rouladeVitesse);
         }
     }

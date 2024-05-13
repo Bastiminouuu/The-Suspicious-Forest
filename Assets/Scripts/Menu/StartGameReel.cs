@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StartGameReelGame : MonoBehaviour
 {
     public Button ButtonStart;
+    public Animator transition;
 
     void Start()                    //Switch menu 
     {
@@ -18,5 +19,15 @@ public class StartGameReelGame : MonoBehaviour
     {
         Debug.Log("Lancer le jeu");
         SceneManager.LoadScene("SCN_Start");
+        //StartCoroutine(LoadLevel());
     }
+
+    //IEnumerator LoadLevel()
+    //{
+    //    transition.SetTrigger("Start");
+
+    //    yield return new WaitForSeconds(1);
+
+    //    SceneManager.LoadScene("SCN_Start");
+    //}
 }
