@@ -2594,13 +2594,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5609963141822066682, guid: fd541ac24e09bc34e8b0e5fa2041a605,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6066997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609963141822066682, guid: fd541ac24e09bc34e8b0e5fa2041a605,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6066997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609963141822066682, guid: fd541ac24e09bc34e8b0e5fa2041a605,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6066997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609963141822066682, guid: fd541ac24e09bc34e8b0e5fa2041a605,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.280722
+      value: -19.25
       objectReference: {fileID: 0}
     - target: {fileID: 5609963141822066682, guid: fd541ac24e09bc34e8b0e5fa2041a605,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1213269
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 5609963141822066682, guid: fd541ac24e09bc34e8b0e5fa2041a605,
         type: 3}
@@ -97975,6 +97990,74 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &2087846835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.08878838
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.088788286
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70151025
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70151025
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 75.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365902355350259285, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108055289989046780, guid: bb75ccc407beaf24baf261b0dca582e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Particle_Sakura
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb75ccc407beaf24baf261b0dca582e3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -97989,3 +98072,4 @@ SceneRoots:
   - {fileID: 1214383491}
   - {fileID: 1471581000}
   - {fileID: 620789172}
+  - {fileID: 2087846835}

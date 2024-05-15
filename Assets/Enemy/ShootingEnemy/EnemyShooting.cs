@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-
-
     public GameObject bullet;
     public Transform bulletPos;
 
     private float timer;
-    private GameObject player;
+    [SerializeField] GameObject player;
 
     void Start()
     {
@@ -27,7 +25,7 @@ public class EnemyShooting : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 2)
+            if (timer > 2.5)
             {
                 timer = 0;
                 shoot();

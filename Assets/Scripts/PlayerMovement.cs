@@ -23,13 +23,19 @@ public class Mouvement : MonoBehaviour
 
     private float horizontal;
     private bool isFacingRight = true;
-    private float rouladeVitesse = 1000f;
+    //private float rouladeVitesse = 1000f;
 
     //------------------JUMP-----------------
     [SerializeField] float JumpHight = 6f;
     [SerializeField] float gravityScale = 10;
     [SerializeField] float fallingGravityScale = 40;
     //------------------JUMP-----------------
+
+    //------------------ROULADE--------------
+    private bool isRolling;  // Booléen pour suivre l'état de roulade
+    private float rollSpeed = 10f; // Vitesse de la roulade
+    private Vector2 rollDirection; // Direction de la roulade
+    //------------------ROULADE--------------
 
 
     void Start()
@@ -100,14 +106,38 @@ public class Mouvement : MonoBehaviour
         horizontal = context.ReadValue<Vector2>().x;
     }
 
-    public void Roulade() 
+    public void Roulade()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
+        if (Input.GetKeyDown(KeyCode.Keypad1) && !isRolling) // Déclenchement sur Ctrl gauche
         {
-            Debug.Log("roulade");
-            //rigidbody.velocity = Vector2.right * rouladeVitesse;
-            //transform.Translate(Vector2.right * rouladeVitesse * Time.deltaTime);
-            rigidbody.AddForce(Vector2.right * rouladeVitesse);
+            Debug.Log("Roulade bam !");
+            StartRoll();
         }
+
+        if (isRolling)
+        {
+            HandleRoll();
+        }
+
+        void StartRoll()
+        {
+            isRolling = true;
+            // Jouer l'animation de roulade
+            // Définir la direction de la roulade en fonction de vos besoins (par exemple, Vector2.right)
+        }
+
+        void HandleRoll()
+        {
+            // Déplacement par translation basée sur la vitesse et la direction
+            transform.Translate(rollDirection * rollSpeed * Time.deltaTime);
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
+        //{
+        //    Debug.Log("roulade");
+        //    //rigidbody.velocity = Vector2.right * rouladeVitesse;
+        //    //transform.Translate(Vector2.right * rouladeVitesse * Time.deltaTime);
+        //    rigidbody.AddForce(Vector2.right * rouladeVitesse);
+        //}
     }
 }
