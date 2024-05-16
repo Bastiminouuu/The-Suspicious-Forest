@@ -13,12 +13,11 @@ public class AddVieBamboo : MonoBehaviour
         {
             Debug.Log("Ajout Vie");
             healthscript.TakeDamaged(-1);
-            if (healthscript.currentHealth >= 3)
+            if (healthscript.currentHealth > 3)
             {
                 healthscript.currentHealth = 3;
             }
             Destroy(gameObject);
-            
         }
     }
 }

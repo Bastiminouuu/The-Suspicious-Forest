@@ -9,7 +9,7 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioMixer audioMixer;
 
-    public TMPro.TMP_Dropdown resolutionDropdown;
+    //public TMPro.TMP_Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
 
@@ -17,7 +17,7 @@ public class SettingsMenu : MonoBehaviour
     {
         resolutions = Screen.resolutions;
 
-        resolutionDropdown.ClearOptions();
+        //resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
 
@@ -33,9 +33,9 @@ public class SettingsMenu : MonoBehaviour
             }
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        //resolutionDropdown.AddOptions(options);
+        //resolutionDropdown.value = currentResolutionIndex;
+        //resolutionDropdown.RefreshShownValue();
     }
 
     public void SetResolution (int resolutionIndex)

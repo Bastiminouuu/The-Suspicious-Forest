@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Load Menu");
         Time.timeScale = 1f;
+        BGmusic.instance.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("SCN_menu");
     }
 

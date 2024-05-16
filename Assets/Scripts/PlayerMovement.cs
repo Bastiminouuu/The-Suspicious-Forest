@@ -13,7 +13,7 @@ public class Mouvement : MonoBehaviour
     //[SerializeField] Animator Player_Animator; // get animation player
     //[SerializeField] SpriteRenderer SpriteRenderer;
     //bool Player_walk;
-
+    public ParticleSystem TrailGround;
 
     //------------------ISGROUNDED------------
     [SerializeField] Transform GroundCheck1;
@@ -73,6 +73,7 @@ public class Mouvement : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+        CreateTrailGround();
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -89,6 +90,8 @@ public class Mouvement : MonoBehaviour
         yield return new WaitForSeconds(0f);
 
         rigidbody.AddForce(Vector2.up * JumpHight, ForceMode2D.Impulse);
+
+        CreateTrailGround();
 
         if (rigidbody.velocity.y >= 0)
         {
@@ -139,5 +142,10 @@ public class Mouvement : MonoBehaviour
         //    //transform.Translate(Vector2.right * rouladeVitesse * Time.deltaTime);
         //    rigidbody.AddForce(Vector2.right * rouladeVitesse);
         //}
+    }
+
+    void CreateTrailGround()
+    {
+        TrailGround.Play();
     }
 }

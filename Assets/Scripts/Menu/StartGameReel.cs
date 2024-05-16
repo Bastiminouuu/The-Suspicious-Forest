@@ -18,6 +18,7 @@ public class StartGameReelGame : MonoBehaviour
     void TaskOnClick()
     {
         Debug.Log("Lancer le jeu");
+        BGmusic.instance.GetComponent<AudioSource>().Pause();
         SceneManager.LoadScene("SCN_Start");
         //StartCoroutine(LoadLevel());
     }

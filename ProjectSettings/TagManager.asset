@@ -13,6 +13,7 @@ TagManager:
   - coin
   - Ladder
   - enemy
+  - MenuMusic
   layers:
   - Default
   - TransparentFX
