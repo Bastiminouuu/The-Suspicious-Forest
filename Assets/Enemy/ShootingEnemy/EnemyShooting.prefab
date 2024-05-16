@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2078414050172096293}
   m_Layer: 0
   m_Name: EnemyShooting
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7356382451142016318, guid: f76961bb023e1e0429d83f4792e1f600, type: 3}
   bulletPos: {fileID: 8906174298566600551}
+  player: {fileID: 119883808006126429, guid: eab1d6ed3c03e9042b04075d9cd188b7, type: 3}
 --- !u!1 &5126338283584443580
 GameObject:
   m_ObjectHideFlags: 0

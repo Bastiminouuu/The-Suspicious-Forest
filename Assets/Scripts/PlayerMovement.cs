@@ -37,10 +37,13 @@ public class Mouvement : MonoBehaviour
     private Vector2 rollDirection; // Direction de la roulade
     //------------------ROULADE--------------
 
+    public AudioSource SoundCoin;
+
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>(); //recover the player's rigidbody
+        SoundCoin = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -143,6 +146,16 @@ public class Mouvement : MonoBehaviour
         //    rigidbody.AddForce(Vector2.right * rouladeVitesse);
         //}
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "coin")
+        {
+            SoundCoin.Play();
+        }
+    }
+
 
     void CreateTrailGround()
     {
