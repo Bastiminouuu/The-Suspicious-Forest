@@ -8,6 +8,7 @@ public class SettingsMenu : MonoBehaviour
 {
 
     public AudioMixer audioMixer;
+    public Slider Music;
 
     //public TMPro.TMP_Dropdown resolutionDropdown;
 
@@ -16,6 +17,12 @@ public class SettingsMenu : MonoBehaviour
     void Start()
     {
         resolutions = Screen.resolutions;
+
+        if (!PlayerPrefs.HasKey("musicVolume"))
+        {
+            PlayerPrefs.SetFloat("musicVolume", 1);
+            Load();
+        } else { Load(); }
 
         //resolutionDropdown.ClearOptions();
 
@@ -46,7 +53,19 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        //audioMixer.SetFloat("volume", volume);
+        AudioListener.volume = Music.value;
+        Save();
+    }
+
+    private void Load()
+    {
+        Music.value = PlayerPrefs.GetFloat("musicVolume");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetFloat("musicVolume", Music.value);
     }
 
     public void SetQuality (int qualityIndex)

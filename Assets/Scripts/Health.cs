@@ -13,24 +13,16 @@ public class Health : MonoBehaviour
     [SerializeField] Sprite heart2;
     [SerializeField] Sprite heart1;
     [SerializeField] Image heart;
-    [SerializeField] GameObject MortAffichage;
+    //[SerializeField] GameObject MortAffichage;
 
     void Start()
     {
-        gameObject.SetActive(false);
+        Time.timeScale = 1f;
         currentHealth = maxHealth; //set heal to maxheal (3)
     }
 
     private void Update()
     {
-        if (currentHealth <= 0)
-        {
-            Debug.Log("Mort");
-            //Time.timeScale = 0f;
-            MortAffichage.SetActive(true);
-            //SceneManager.LoadScene("SCN_menu");
-        }
-
         if (currentHealth == 3)
         {
             heart.sprite = heart3;
