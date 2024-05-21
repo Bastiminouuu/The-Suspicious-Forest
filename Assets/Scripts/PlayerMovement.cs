@@ -10,9 +10,10 @@ public class Mouvement : MonoBehaviour
 {
     [SerializeField] float mouvement_speed = 5f;
     [SerializeField] private new Rigidbody2D rigidbody;
-    //[SerializeField] Animator Player_Animator; // get animation player
-    //[SerializeField] SpriteRenderer SpriteRenderer;
-    //bool Player_walk;
+    [SerializeField] Animator Player_Animator; // get animation player
+    [SerializeField] SpriteRenderer SpriteRenderer;
+    private bool WalkAnimation;
+
     public ParticleSystem TrailGround;
 
     //------------------ISGROUNDED------------
@@ -34,20 +35,23 @@ public class Mouvement : MonoBehaviour
     //------------------ROULADE--------------
     private bool isRolling;  // Booléen pour suivre l'état de roulade
     private float rollSpeed = 10f; // Vitesse de la roulade
-    private Vector2 rollDirection; // Direction de la roulade
     //------------------ROULADE--------------
 
-    public AudioSource SoundCoin;
+    AudioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>(); //recover the player's rigidbody
-        SoundCoin = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        //WalkAnimation = false;
         rigidbody.velocity = new Vector2(horizontal * mouvement_speed, rigidbody.velocity.y);
 
         Roulade();
@@ -92,6 +96,7 @@ public class Mouvement : MonoBehaviour
         //Wait for 0.2 seconds
         yield return new WaitForSeconds(0f);
 
+        audioManager.PlaySFX(audioManager.JumpSound);
         rigidbody.AddForce(Vector2.up * JumpHight, ForceMode2D.Impulse);
 
         CreateTrailGround();
@@ -109,33 +114,27 @@ public class Mouvement : MonoBehaviour
 
     public void HorizontalMoove(InputAction.CallbackContext context)
     {
+        //WalkAnimation = true;
+        //audioManager.PlaySFX(audioManager.WalkSound);
         horizontal = context.ReadValue<Vector2>().x;
     }
 
     public void Roulade()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1) && !isRolling) // Déclenchement sur Ctrl gauche
+        if (Input.GetKeyDown(KeyCode.Keypad1) && !isRolling)
         {
             Debug.Log("Roulade bam !");
-            StartRoll();
-        }
-
-        if (isRolling)
-        {
-            HandleRoll();
-        }
-
-        void StartRoll()
-        {
             isRolling = true;
-            // Jouer l'animation de roulade
-            // Définir la direction de la roulade en fonction de vos besoins (par exemple, Vector2.right)
-        }
+            //play animation roulade
 
-        void HandleRoll()
-        {
-            // Déplacement par translation basée sur la vitesse et la direction
-            transform.Translate(rollDirection * rollSpeed * Time.deltaTime);
+            if (isRolling)
+            {
+                transform.Translate(Vector2.right * rollSpeed * Time.deltaTime);
+            }
+            else 
+            { 
+                isRolling = false; 
+            }
         }
 
         //if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
@@ -145,15 +144,6 @@ public class Mouvement : MonoBehaviour
         //    //transform.Translate(Vector2.right * rouladeVitesse * Time.deltaTime);
         //    rigidbody.AddForce(Vector2.right * rouladeVitesse);
         //}
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "coin")
-        {
-            SoundCoin.Play();
-        }
     }
 
 

@@ -5,19 +5,18 @@ using UnityEngine;
 public class Score : MonoBehaviour 
 {
     public int scorevalue;
-    //public AudioSource SoundCoin;
+    AudioManager audioManager;
 
-    private void Start()
+    private void Awake()
     {
-        //SoundCoin = gameObject.GetComponent<AudioSource>();
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("Plays Sound Coin");
-            //SoundCoin.Play();
+            audioManager.PlaySFX(audioManager.CoinSound);
             Destroy(gameObject);
             CoinCounter.instance.IncreaseCoins(scorevalue);
         }

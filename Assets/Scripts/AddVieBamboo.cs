@@ -6,6 +6,11 @@ public class AddVieBamboo : MonoBehaviour
 {
     public Health healthscript;
     public GameObject player;
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +18,7 @@ public class AddVieBamboo : MonoBehaviour
         {
             Debug.Log("Ajout Vie");
             healthscript.TakeDamaged(-1);
+            audioManager.PlaySFX(audioManager.AddVieSound);
             if (healthscript.currentHealth > 3)
             {
                 healthscript.currentHealth = 3;

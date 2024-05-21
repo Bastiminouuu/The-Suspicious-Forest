@@ -14,6 +14,7 @@ TagManager:
   - Ladder
   - enemy
   - MenuMusic
+  - audio
   layers:
   - Default
   - TransparentFX
