@@ -24,7 +24,7 @@ public class Mouvement : MonoBehaviour
 
     private float horizontal;
     private bool isFacingRight = true;
-    private float rouladeVitesse = 100f;
+    [SerializeField] float rouladeVitesse = 10000f;
 
     //------------------JUMP-----------------
     [SerializeField] float JumpHight = 6f;
@@ -121,46 +121,11 @@ public class Mouvement : MonoBehaviour
 
     public void Roulade()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))// && !isRolling)
+        if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
         {
-            StartCoroutine(RollCoroutine());
-
-
-
-            //Debug.Log("Roulade bam !");
-
-            //rigidbody.velocity = Vector2.right * (rouladeVitesse/ 1.8f);
-            ////--------------------------------------------------------
-            ////rigidbody.AddForce(new Vector2(0f, -100f));
-            ////rigidbody.AddTorque(100f);
-            ////--------------------------------------------------------
-            //rigidbody.velocity = new Vector2(50, 0);
-        }
-
-        //if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
-        //{
-        //    Debug.Log("roulade");
-        //    //rigidbody.velocity = Vector2.right * rouladeVitesse;
-        //    //transform.Translate(Vector2.right * rouladeVitesse * Time.deltaTime);
-        //    //rigidbody.AddForce(Vector2.right * rouladeVitesse);
-        //}
-    }
-
-    private IEnumerator RollCoroutine()
-    {
-        float rollForce = 100f; // Adjust this value for desired roll strength
-        float rollDuration = 0.2f; // Adjust this value for desired roll duration
-
-        float directionMultiplier = isFacingRight ? 1f : -1f;
-
-        Debug.Log("Roulade bam !");
-
-        rigidbody.velocity = Vector2.zero; // Reset velocity before applying roll force
-
-        for (float time = 0; time < rollDuration; time += Time.deltaTime)
-        {
-            rigidbody.AddForce(Vector2.right * rollForce * directionMultiplier * Time.deltaTime);
-            yield return null;
+            Debug.Log("Roulade bam !");
+            //rigidbody.velocity = Vector2.right * (rouladeVitesse/ 1.8f);              //MARCHE MAIS TP
+            rigidbody.AddForce(Vector2.right * rouladeVitesse);                         //LE PLUS SATISFAISANT MAIS TP AUSSI
         }
     }
 
