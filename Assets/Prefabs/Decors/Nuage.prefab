@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8303980164112739499}
   - component: {fileID: 6528000711548844904}
   - component: {fileID: -6856695552455883321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nuage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 95ad78be8330c864c9285b9b4f45ec46, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

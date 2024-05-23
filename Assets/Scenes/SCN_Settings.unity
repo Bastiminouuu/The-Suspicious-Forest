@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 1a157c039f395644aa1903eff38598c7, type: 2}
-  Music: {fileID: 0}
+  Music: {fileID: 782018015}
 --- !u!1 &420599598
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,6 +79,6 @@ MonoBehaviour:
   clouds:
   - {fileID: 9172500151844855924, guid: 8bcd5358ba6972c4ab81d654f2874c18, type: 3}
   - {fileID: 3278498986984583867, guid: a6b0cddd6aff0ee4e9afc943a971b064, type: 3}
-  - {fileID: 3718830014666682118, guid: 29c1f39d8aafb104e9346d6f1a87335f, type: 3}
+  - {fileID: 7091523832211289676, guid: 29c1f39d8aafb104e9346d6f1a87335f, type: 3}
   spawnInterval: 6
   endPoint: {fileID: 1451114017731730254}
