@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //rajouter la touche start manette startButton
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) //rajouter la touche start manette startButton
         {
             if (GameIsPaused)
             {

@@ -12,6 +12,7 @@ public class Mouvement : MonoBehaviour
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] Animator Player_Animator; // get animation player
     [SerializeField] SpriteRenderer SpriteRenderer;
+    
     private bool WalkAnimation;
 
     public ParticleSystem TrailGround;
