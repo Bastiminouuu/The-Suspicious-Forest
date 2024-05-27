@@ -13,7 +13,14 @@ public class Health : MonoBehaviour
     [SerializeField] Sprite heart2;
     [SerializeField] Sprite heart1;
     [SerializeField] Image heart;
+    AudioManager audioManager;
+
     //[SerializeField] GameObject MortAffichage;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -40,6 +47,7 @@ public class Health : MonoBehaviour
     public void TakeDamaged(int amount)
     {
         currentHealth -= amount;
+        //audioManager.PlaySFX(audioManager.AddVieSound);
     }
 
     public void Respawn()

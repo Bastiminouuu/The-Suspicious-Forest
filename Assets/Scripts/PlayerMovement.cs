@@ -10,22 +10,17 @@ public class Mouvement : MonoBehaviour
 {
     [SerializeField] float mouvement_speed = 5f;
     [SerializeField] private new Rigidbody2D rigidbody;
-    [SerializeField] Animator Player_Animator; // get animation player
+    Animator animator;
     [SerializeField] SpriteRenderer SpriteRenderer;
-    
-    private bool WalkAnimation;
-
     public ParticleSystem TrailGround;
 
     //------------------ISGROUNDED------------
     [SerializeField] Transform GroundCheck1;
     [SerializeField] LayerMask Ground;
-    [SerializeField] bool IsGrounded;
     //------------------ISGROUNDED------------
 
     private float horizontal;
     private bool isFacingRight = true;
-    [SerializeField] float rouladeVitesse = 10000f;
 
     //------------------JUMP-----------------
     [SerializeField] float JumpHight = 6f;
@@ -34,7 +29,7 @@ public class Mouvement : MonoBehaviour
     //------------------JUMP-----------------
 
     //------------------ROULADE--------------
-    //private float rollSpeed = 10f; // Vitesse de la roulade
+    [SerializeField] float rouladeVitesse = 10000f;
     //------------------ROULADE--------------
 
     AudioManager audioManager;
@@ -47,11 +42,19 @@ public class Mouvement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>(); //recover the player's rigidbody
+
+        animator = GetComponent<Animator>();
+        animator.SetBool("walk", false);
     }
 
     void Update()
     {
-        //WalkAnimation = false;
+
+        //if (/*grounded false = arreter lecture anim marche*/)
+        //{
+        //    animator.SetBool("walk", false);
+        //}
+
         rigidbody.velocity = new Vector2(horizontal * mouvement_speed, rigidbody.velocity.y);
 
         Roulade();
@@ -114,8 +117,8 @@ public class Mouvement : MonoBehaviour
 
     public void HorizontalMoove(InputAction.CallbackContext context)
     {
-        //WalkAnimation = true;
-        //audioManager.PlaySFX(audioManager.WalkSound);
+        animator.SetBool("walk", true);
+        audioManager.PlaySFX(audioManager.WalkSound);
         horizontal = context.ReadValue<Vector2>().x;
     }
 
