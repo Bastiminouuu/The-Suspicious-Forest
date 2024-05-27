@@ -11,6 +11,8 @@ public class BulletShoot : MonoBehaviour
     public float force;
     private float timer;
 
+    public AudioManager audioManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,10 @@ public class BulletShoot : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
+    }
 
     void Update()
     {
@@ -39,6 +45,7 @@ public class BulletShoot : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<Health>().currentHealth -= 1;
+            audioManager.PlaySFX(audioManager.DamageSound);
             Destroy (gameObject);
         }
     }

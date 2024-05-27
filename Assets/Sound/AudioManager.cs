@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip AddVieSound;
     public AudioClip CheckpointSound;
     public AudioClip WalkSound;
-
+    public AudioClip DamageSound;
 
     public void PlaySFX(AudioClip clip)
     {

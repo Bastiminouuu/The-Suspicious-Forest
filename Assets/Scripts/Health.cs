@@ -47,7 +47,6 @@ public class Health : MonoBehaviour
     public void TakeDamaged(int amount)
     {
         currentHealth -= amount;
-        //audioManager.PlaySFX(audioManager.AddVieSound);
     }
 
     public void Respawn()
