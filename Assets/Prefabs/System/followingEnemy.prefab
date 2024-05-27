@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2359676141653420250}
   - component: {fileID: 3811720809671252079}
   - component: {fileID: 5875263612530193011}
+  - component: {fileID: 1721936659309844043}
   - component: {fileID: 1243664464465356890}
   m_Layer: 0
   m_Name: followingEnemy
@@ -75,14 +76,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
-    type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 62149da204e25744fb35c2aab5034ced, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.0951686, y: 7.0466666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -151,8 +151,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 7.0951686, y: 7.0466666}
+    newSize: {x: 7.0951686, y: 7.0466666}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -160,6 +160,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!68 &1721936659309844043
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682351624541875403}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.55233574, y: 3.4478226}
+  - {x: 1.0936995, y: 2.7986796}
+  - {x: 1.0341667, y: 2.0762205}
+  - {x: 1.6370817, y: 1.256816}
+  - {x: 1.8171726, y: -0.034320995}
+  - {x: 1.1612337, y: -3.5249672}
+  - {x: -1.3796698, y: -3.5091684}
+  - {x: -1.6099243, y: -0.89666814}
+  - {x: -1.0884523, y: 0.72631603}
+  - {x: -0.2497898, y: 1.8692528}
+  - {x: 0.00019833728, y: 2.8485017}
+  - {x: 0.51430225, y: 3.4392493}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!114 &1243664464465356890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,3 +226,6 @@ MonoBehaviour:
   player: {fileID: 0}
   agroRange: 10
   moveSpeed: 2.5
+  healthscript: {fileID: 0}
+  dieScript: {fileID: 0}
+  RespawnPoint: {fileID: 0}
