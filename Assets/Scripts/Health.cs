@@ -42,6 +42,15 @@ public class Health : MonoBehaviour
         {
             heart.sprite = heart1;
         }
+
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("BoutonA"))
+        {
+            currentHealth++;
+            if (currentHealth > 3)
+            {
+                currentHealth = 3;
+            }
+        }
     }
 
     public void TakeDamaged(int amount)

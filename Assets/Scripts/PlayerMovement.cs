@@ -133,12 +133,16 @@ public class Mouvement : MonoBehaviour
         if (canMoove == true)
         {
             animator.SetBool("walk", true);
-            //audioManager.PlaySFX(audioManager.WalkSound);
+            //play sound for walk
             horizontal = context.ReadValue<Vector2>().x;
+        }
+        if (context.canceled)
+        {
+            animator.SetBool("walk", false);
         }
     }
 
-    public void Roulade()
+        public void Roulade()
     {
         if (Input.GetKeyDown(KeyCode.Keypad1) && isgrounded())
         {

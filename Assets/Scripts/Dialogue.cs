@@ -25,7 +25,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("BoutonManetteDialogue") || Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("BoutonA") || Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
