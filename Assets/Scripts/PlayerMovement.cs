@@ -32,6 +32,9 @@ public class Mouvement : MonoBehaviour
     [SerializeField] float rouladeVitesse = 10000f;
     //------------------ROULADE--------------
 
+    public bool canMoove;
+    public bool canJump;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -42,6 +45,8 @@ public class Mouvement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>(); //recover the player's rigidbody
+        canMoove = true;
+        canJump = true;
 
         animator = GetComponent<Animator>();
         animator.SetBool("walk", false);
@@ -55,9 +60,17 @@ public class Mouvement : MonoBehaviour
         //    animator.SetBool("walk", false);
         //}
 
-        rigidbody.velocity = new Vector2(horizontal * mouvement_speed, rigidbody.velocity.y);
-
         Roulade();
+
+        if (canMoove == false) 
+        {
+            rigidbody.velocity = Vector2.zero;
+            animator.SetBool("walk", false);
+        }
+        else
+        {
+            rigidbody.velocity = new Vector2(horizontal * mouvement_speed, rigidbody.velocity.y);
+        }
 
         if (!isFacingRight && horizontal > 0f) 
         {
@@ -89,7 +102,7 @@ public class Mouvement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         //------------------------JUMP----------------------
-        if (context.performed && isgrounded()) // performs the jump and check isgrounded
+        if (context.performed && isgrounded() && canJump == true) // performs the jump and check isgrounded
         {
             StartCoroutine(jumpScript());
         }
@@ -117,9 +130,12 @@ public class Mouvement : MonoBehaviour
 
     public void HorizontalMoove(InputAction.CallbackContext context)
     {
-        animator.SetBool("walk", true);
-        audioManager.PlaySFX(audioManager.WalkSound);
-        horizontal = context.ReadValue<Vector2>().x;
+        if (canMoove == true)
+        {
+            animator.SetBool("walk", true);
+            //audioManager.PlaySFX(audioManager.WalkSound);
+            horizontal = context.ReadValue<Vector2>().x;
+        }
     }
 
     public void Roulade()

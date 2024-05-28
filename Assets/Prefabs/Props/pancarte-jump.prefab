@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8441480962176142986
+--- !u!1 &286842120941062823
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8695399963821300812}
-  - component: {fileID: 2571736854587338985}
+  - component: {fileID: 8022282347334125347}
+  - component: {fileID: 6563906702827474281}
   m_Layer: 0
   m_Name: pancarte-jump
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8695399963821300812
+--- !u!4 &8022282347334125347
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441480962176142986}
+  m_GameObject: {fileID: 286842120941062823}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.03492261, w: 0.99939007}
-  m_LocalPosition: {x: 2.6308308, y: -3.2549484, z: 0}
-  m_LocalScale: {x: 0.22458552, y: 0.22458552, z: 0.2245855}
+  m_LocalRotation: {x: -0, y: -0, z: -0.019510953, w: 0.9998096}
+  m_LocalPosition: {x: 199.37, y: -18.9, z: 0}
+  m_LocalScale: {x: 0.49395654, y: 0.49395654, z: 0.49395654}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.003}
---- !u!212 &2571736854587338985
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.236}
+--- !u!212 &6563906702827474281
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441480962176142986}
+  m_GameObject: {fileID: 286842120941062823}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4f6e28f1f8d1c084287d32c0b2753896, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 134b733a3976c6a44b8312b4892a07be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.083333, y: 6.65}
+  m_Size: {x: 4.85, y: 3.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

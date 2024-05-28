@@ -9,9 +9,9 @@ public class TriggerZoneBas : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera cam2;     //set camera pos2
     private bool retour = true;                         //set actif ou non
 
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (retour == true)             //switch cam 2 is trigger
+        if (retour == true && other.gameObject.CompareTag("Player"))             //switch cam 2 is trigger
         {
             cam1.Priority = 1;
             cam2.Priority = 100;
@@ -24,9 +24,9 @@ public class TriggerZoneBas : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D()      //sortie du trigger
+    private void OnTriggerExit2D(Collider2D other)      //sortie du trigger
     {
-        if (retour == true)
+        if (retour == true && other.gameObject.CompareTag("Player"))
         {
             retour = false;
         }
