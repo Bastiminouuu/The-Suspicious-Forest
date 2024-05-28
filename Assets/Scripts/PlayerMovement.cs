@@ -148,7 +148,7 @@ public class Mouvement : MonoBehaviour
         {
             Debug.Log("Roulade bam !");
             //rigidbody.velocity = Vector2.right * (rouladeVitesse/ 1.8f);              //MARCHE MAIS TP
-            rigidbody.AddForce(Vector2.right * rouladeVitesse);                       //LE PLUS SATISFAISANT MAIS TP AUSSI
+            rigidbody.AddForce(Vector2.right * rouladeVitesse);                         //LE PLUS SATISFAISANT MAIS TP AUSSI
         }
     }
 
