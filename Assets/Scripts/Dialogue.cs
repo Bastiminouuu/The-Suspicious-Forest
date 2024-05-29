@@ -65,8 +65,8 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            Moove.canMoove = true;
-            Moove.canJump = true;
+            Moove.canMoove = false;
+            Moove.canJump = false;
         }
     }
 }

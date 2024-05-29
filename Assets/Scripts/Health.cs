@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
             heart.sprite = heart1;
         }
 
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("BoutonA"))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("AddVie"))
         {
             currentHealth++;
             if (currentHealth > 3)

@@ -16,6 +16,12 @@ public class EnnemyFollowScript : MonoBehaviour
     public DieScript dieScript;
     public GameObject RespawnPoint;
 
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -46,6 +52,13 @@ public class EnnemyFollowScript : MonoBehaviour
             Debug.Log("Mort Enemy");
             healthscript.TakeDamaged(1);
             player.transform.position = RespawnPoint.transform.position;
+        }
+
+        if (collision.gameObject.tag == "rondin") //mort enemy
+        {
+            Debug.Log("Enemy dead ecrasé");
+            audioManager.PlaySFX(audioManager.EnemyDie);
+            Destroy(gameObject);
         }
     }
 
