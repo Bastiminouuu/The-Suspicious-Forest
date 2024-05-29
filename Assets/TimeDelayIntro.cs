@@ -13,6 +13,7 @@ public class TimeDelayIntro : MonoBehaviour
         ChangeTime -= Time.deltaTime;
         if (ChangeTime <= 0)
         {
+            BGmusic.instance.GetComponent<AudioSource>().Pause();
             SceneManager.LoadScene(GameScene);
         }
     }
