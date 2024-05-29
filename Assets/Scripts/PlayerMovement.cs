@@ -54,11 +54,10 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-
-        //if (/*grounded false = arreter lecture anim marche*/)
-        //{
-        //    animator.SetBool("walk", false);
-        //}
+        if (rigidbody.velocity.x > 1f)
+        {
+            animator.SetBool("walk", true);
+        }
 
         Roulade();
 

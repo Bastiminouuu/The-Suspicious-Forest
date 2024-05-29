@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class Dialogue : MonoBehaviour
 {
@@ -15,13 +17,19 @@ public class Dialogue : MonoBehaviour
     private int index;
 
 
+    [SerializeField] PlayableDirector Timeline;
+
+
     void Start()
     {
+        Timeline = GetComponent<PlayableDirector>();
+
         Moove.canMoove = false;
         Moove.canJump = false;
         textComponent.text = string.Empty;
         StartDialogue();
     }
+
 
     void Update()
     {
@@ -65,6 +73,10 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+
+            //lancer timeline de fin (perso qui se déplace vers enfant)
+            Timeline.Play();
+
             Moove.canMoove = false;
             Moove.canJump = false;
         }
