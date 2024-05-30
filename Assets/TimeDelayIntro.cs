@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class TimeDelayIntro : MonoBehaviour
 {
     [SerializeField] float ChangeTime;
-    [SerializeField] string GameScene;
 
     private void Update()
     {
@@ -14,7 +13,7 @@ public class TimeDelayIntro : MonoBehaviour
         if (ChangeTime <= 0)
         {
             BGmusic.instance.GetComponent<AudioSource>().Pause();
-            SceneManager.LoadScene(GameScene);
+            SceneManager.LoadScene("SCN_Start");
         }
     }
 }

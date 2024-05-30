@@ -50,11 +50,12 @@ MonoBehaviour:
   CoinSound: {fileID: 8300000, guid: 6e80f655c06994f498b4952798fe0d74, type: 3}
   JumpSound: {fileID: 8300000, guid: 4eb7b2251f1ae2a4e845473c735a1bd0, type: 3}
   JumpChampiSound: {fileID: 8300000, guid: 455704de7fe38814f801665969a7af22, type: 3}
-  FallSound: {fileID: 8300000, guid: 94c37d7fdbfe9c04189c39fc9f77877a, type: 3}
+  FallSound: {fileID: 8300000, guid: 0b9ee8c5446a4a44983beb8ec8cb394c, type: 3}
   AddVieSound: {fileID: 8300000, guid: 6f75e6c743c0dbf4b847b0a3fc6c2147, type: 3}
   CheckpointSound: {fileID: 8300000, guid: ae7cea496fd40384fa82fedbcc7930b9, type: 3}
-  WalkSound: {fileID: 8300000, guid: 0de7374de9eb0bd4393525ca29f953ae, type: 3}
   DamageSound: {fileID: 8300000, guid: 2993d29d7ea3ff4409f690db4a693428, type: 3}
+  EnemyDie: {fileID: 8300000, guid: d078a19a71c705a48927b6b6122010a3, type: 3}
+  PlayerDie: {fileID: 8300000, guid: 7b77eaf6c48915a42b2892728171ff15, type: 3}
 --- !u!1 &5198867424629496598
 GameObject:
   m_ObjectHideFlags: 0

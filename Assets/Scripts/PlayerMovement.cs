@@ -54,10 +54,6 @@ public class Mouvement : MonoBehaviour
 
     void Update()
     {
-        if (rigidbody.velocity.x > 1f)
-        {
-            animator.SetBool("walk", true);
-        }
 
         Roulade();
 

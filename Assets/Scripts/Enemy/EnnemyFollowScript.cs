@@ -51,6 +51,7 @@ public class EnnemyFollowScript : MonoBehaviour
         {
             Debug.Log("Mort Enemy");
             healthscript.TakeDamaged(1);
+            audioManager.PlaySFX(audioManager.DamageSound);
             player.transform.position = RespawnPoint.transform.position;
         }
 
@@ -58,6 +59,11 @@ public class EnnemyFollowScript : MonoBehaviour
         {
             Debug.Log("Enemy dead ecrasé");
             audioManager.PlaySFX(audioManager.EnemyDie);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Die") //mort enemy
+        {
             Destroy(gameObject);
         }
     }

@@ -16,14 +16,12 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
-
-    [SerializeField] PlayableDirector Timeline;
+    public GameObject UI;
+    public PlayableDirector Timeline;
 
 
     void Start()
     {
-        Timeline = GetComponent<PlayableDirector>();
-
         Moove.canMoove = false;
         Moove.canJump = false;
         textComponent.text = string.Empty;
@@ -73,7 +71,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-
+            UI.SetActive(false);
             //lancer timeline de fin (perso qui se déplace vers enfant)
             Timeline.Play();
 

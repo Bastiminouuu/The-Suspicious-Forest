@@ -135,18 +135,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcad1e45be3bc3147ba24bf0ba82d2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouvement_speed: 5
+  mouvement_speed: 6
   rigidbody: {fileID: 3554084436539990246}
+  SpriteRenderer: {fileID: 7477982196255437529}
   TrailGround: {fileID: 1981705842219673077}
   GroundCheck1: {fileID: 1051960311238501791}
   Ground:
     serializedVersion: 2
     m_Bits: 8
-  IsGrounded: 0
-  JumpHight: 13
+  JumpHight: 15
   gravityScale: 10
-  fallingGravityScale: 6
-  SoundCoin: {fileID: 6522754157034108051}
+  fallingGravityScale: 10
+  rouladeVitesse: 100
+  canMoove: 0
+  canJump: 0
 --- !u!114 &8223567811402237743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b07b92357b2ad429bb918fa45cf7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Depart: {fileID: 0}
+  Start: {fileID: 0}
   End: {fileID: 0}
   Deplacement: 0
 --- !u!61 &2889946802033030964
@@ -220,6 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
+  originalFirstSelected: {fileID: 0}
+  secondSelected: {fileID: 0}
 --- !u!114 &7113115970491796476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +352,6 @@ MonoBehaviour:
   heart2: {fileID: 21300000, guid: bf9b6e01aa3f27b48bf34675d7ace1e1, type: 3}
   heart1: {fileID: 21300000, guid: 46cf1d25abf304240afd2e743c4fc76e, type: 3}
   heart: {fileID: 0}
-  MortAffichage: {fileID: 0}
 --- !u!1 &1277572119947619559
 GameObject:
   m_ObjectHideFlags: 0

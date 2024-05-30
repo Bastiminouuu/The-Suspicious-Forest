@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-
-    public AudioMixer audioMixer;
     public Slider Music;
 
     //public TMPro.TMP_Dropdown resolutionDropdown;
@@ -53,7 +51,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        //audioMixer.SetFloat("volume", volume);
         AudioListener.volume = Music.value;
         Save();
     }

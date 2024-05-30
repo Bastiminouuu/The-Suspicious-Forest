@@ -25,7 +25,7 @@ public class EnemyShooting : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 4.5)
+            if (timer > 3.5)
             {
                 timer = 0;
                 shoot();
