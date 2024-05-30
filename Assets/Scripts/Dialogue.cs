@@ -16,6 +16,10 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
+
+    [SerializeField] GameObject MusicCalm, MusicEpic;
+
+
     public GameObject UI;
     public PlayableDirector Timeline;
 
@@ -25,9 +29,12 @@ public class Dialogue : MonoBehaviour
         Moove.canMoove = false;
         Moove.canJump = false;
         textComponent.text = string.Empty;
+
+        MusicEpic.SetActive(false);
+        MusicCalm.SetActive(true);
+
         StartDialogue();
     }
-
 
     void Update()
     {

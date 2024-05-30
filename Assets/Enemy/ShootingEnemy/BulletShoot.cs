@@ -34,7 +34,7 @@ public class BulletShoot : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 3)
+        if (timer > 3.5)
         {
             Destroy(gameObject);
         }

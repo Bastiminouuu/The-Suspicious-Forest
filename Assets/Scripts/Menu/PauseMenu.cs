@@ -13,22 +13,19 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    public GameObject originalFirstSelected;
-    public GameObject secondSelected;
+    public SwitchEventSystem SwitchEvent;
 
     private void Start()
     {
-        if (EventSystem.current != null)
-        {
-            originalFirstSelected = EventSystem.current.firstSelectedGameObject;
-        }
+        SwitchEvent.RestoreOriginalFocus();
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) //rajouter la touche start manette startButton
         {
-            RestoreOriginalFocus();
+
+            SwitchEvent.RestoreOriginalFocus();
 
             if (GameIsPaused)
             {
@@ -39,21 +36,6 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-    }
-
-
-    public void RestoreOriginalFocus()
-    {
-        if (originalFirstSelected != null)
-        {
-            EventSystem.current.SetSelectedGameObject(originalFirstSelected);
-        }
-    }
-
-    public void OpenOptionsPanel()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(secondSelected.gameObject);
     }
 
     public void Resume()

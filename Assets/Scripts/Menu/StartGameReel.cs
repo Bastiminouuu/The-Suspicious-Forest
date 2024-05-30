@@ -12,6 +12,7 @@ public class StartGameReelGame : MonoBehaviour
 
     void Start()                    //Switch menu 
     {
+        Timeline.time = 0;
         Button btn = ButtonStart.GetComponent<Button>();
         BGmusic.instance.GetComponent<AudioSource>().UnPause();
         btn.onClick.AddListener(TaskOnClick);
