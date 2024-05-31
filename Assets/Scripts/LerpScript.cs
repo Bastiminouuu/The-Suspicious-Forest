@@ -8,6 +8,7 @@ public class LerpScript : MonoBehaviour
     [SerializeField] Transform End;
     [SerializeField] bool Deplacement = false;
     private float t = 0f;
+    Animator animator;
 
     void OnTriggerEnter2D(Collider2D Col)
     {
@@ -15,13 +16,17 @@ public class LerpScript : MonoBehaviour
         {
             Debug.Log("Deplacement TRUE");
             Deplacement = true;
+            animator.SetBool("walk", true);
+
         }
 
         if (Col.gameObject.tag == "LerpOff")
         {
             Debug.Log("Deplacement False");
-            Deplacement = false;
+            Deplacement = false; 
+            animator.SetBool("walk", true);
             transform.position = this.transform.position;
+           
         }
     }
 

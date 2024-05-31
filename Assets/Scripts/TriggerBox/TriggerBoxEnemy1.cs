@@ -8,6 +8,9 @@ public class TriggerBoxEnemy1 : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera cam1;     //set camera pos1
     [SerializeField] CinemachineVirtualCamera cam2;     //set camera pos2
     private bool retour = true;                         //set actif ou non
+    public GameObject boxcollider;
+
+    public Health healthscript;
 
     private void OnTriggerEnter2D()
     {
@@ -15,6 +18,7 @@ public class TriggerBoxEnemy1 : MonoBehaviour
         {
             cam1.Priority = 1;
             cam2.Priority = 100;
+            boxcollider.SetActive(true);
         }
 
         else                            //switch cam 1 if not trigger
@@ -33,6 +37,14 @@ public class TriggerBoxEnemy1 : MonoBehaviour
         else
         {
             retour = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (healthscript.currentHealth < 3)
+        {
+            boxcollider.SetActive(false);
         }
     }
 }
