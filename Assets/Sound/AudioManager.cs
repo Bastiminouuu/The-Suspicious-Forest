@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip DamageSound;
     public AudioClip EnemyDie;
     public AudioClip PlayerDie;
+    public AudioClip SpearSound;
 
     public void PlaySFX(AudioClip clip)
     {

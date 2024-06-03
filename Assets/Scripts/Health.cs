@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     [SerializeField] Sprite heart1;
     [SerializeField] Image heart;
     AudioManager audioManager;
-
+    
     //[SerializeField] GameObject MortAffichage;
 
     private void Awake()

@@ -9,10 +9,16 @@ public class EnemyShooting : MonoBehaviour
 
     private float timer;
     [SerializeField] GameObject player;
+    public AudioManager audioManager;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
     }
 
     void Update()
@@ -35,6 +41,7 @@ public class EnemyShooting : MonoBehaviour
 
     void shoot() 
     {
+        audioManager.PlaySFX(audioManager.SpearSound);
         Instantiate(bullet, bulletPos.position, Quaternion.identity);
     }
 }

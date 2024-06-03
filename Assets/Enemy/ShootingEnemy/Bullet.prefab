@@ -132,6 +132,7 @@ MonoBehaviour:
   force: 5
   audioManager: {fileID: 8681520259009763960, guid: d8d6a9ca405034d46bf3caabe60096fb,
     type: 3}
+  blood: {fileID: 560232692075955571, guid: 740e9a9497a00e64f977d10e1e940d41, type: 3}
 --- !u!61 &5592451919102662081
 BoxCollider2D:
   m_ObjectHideFlags: 0

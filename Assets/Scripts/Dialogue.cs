@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
     private int index;
 
 
-    [SerializeField] GameObject MusicCalm, MusicEpic;
+    //[SerializeField] GameObject MusicCalm, MusicEpic;
 
 
     public GameObject UI;
@@ -30,8 +30,8 @@ public class Dialogue : MonoBehaviour
         Moove.canJump = false;
         textComponent.text = string.Empty;
 
-        MusicEpic.SetActive(false);
-        MusicCalm.SetActive(true);
+        //MusicEpic.SetActive(false);
+        //MusicCalm.SetActive(true);
 
         StartDialogue();
     }
